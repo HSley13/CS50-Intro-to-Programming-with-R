@@ -3,12 +3,13 @@ url <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/non-voters
 voters <- read.csv(url)
 View(voters)
 
-# output the number of rows and colums respectively
+# output the number of rows and columns respectively
 nrow(voters)
 ncol(voters)
 
 # output all the category a voter can be
 voters$voter_category
+
 #output the different unique value a voter can be
 unique(voters$voter_category)
 
