@@ -1,9 +1,12 @@
 # or just use read.csv, then remove the sep and header arguments
 votes <- read.table(
-              "votes.csv", # nolint
-              sep = ",",
-              header = TRUE
-              ) # nolint: indentation_linter.
+    "votes.csv", # nolint
+    header = TRUE,
+    sep = ","
+) # nolint: indentation_linter.
+
+# or just using
+# votes <- read.csv("votes.csv") # nolint
 
 # view the cvs file as a table
 View(votes)
@@ -17,9 +20,13 @@ votes$poll[1]
 sum(votes$poll)
 sum(votes$mail)
 
+# sum of the sum of the vectors
+sum(votes$poll, votes$mail)
+
+# sum of the vectors element wise
 votes$total <- votes$mail + votes$poll
 
 rownames(votes)
 colnames(votes)
 
-write.csv(votes, "totol.csv", row.names = FALSE)
+write.csv(votes, "total.csv", row.names = FALSE)

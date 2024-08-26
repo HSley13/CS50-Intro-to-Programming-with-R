@@ -1,4 +1,4 @@
-url <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/non-voters/nonvoters_data.csv"
+url <- "https://raw.githubusercontent.com/fivethirtyeight/data/master/non-voters/nonvoters_data.csv" # nolint
 
 voters <- read.csv(url)
 View(voters)
@@ -10,7 +10,7 @@ ncol(voters)
 # output all the category a voter can be
 voters$voter_category
 
-#output the different unique value a voter can be
+# output the different unique value a voter can be
 unique(voters$voter_category)
 
 voters$Q22
@@ -21,7 +21,8 @@ unique(voters$Q21)
 
 # like unique but better and ordered
 factor(
-  voters$Q21,
-  labels = c("YES", "NO", "UNSURE/UNDECIDED"),
-  exclude = c(-1)
-  )
+    voters$Q21, # nolint
+    levels = c(1, 2, 3),
+    labels = c("YES", "NO", "UNSURE/UNDECIDED"),
+    exclude = c(-1)
+)
