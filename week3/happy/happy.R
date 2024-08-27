@@ -5,7 +5,7 @@ year22 <- read.csv("2022.csv")
 year23 <- read.csv("2023.csv")
 year24 <- read.csv("2024.csv")
 
-years <- list(`2020` = year20, `2021` = year21, `2022` = year22, `2023` = year23, `2024` = year24) # nolint
+years <- list("2020" = year20, "2021" = year21, "2022" = year22, "2023" = year23, "2024" = year24) # nolint
 
 # Function to calculate happiness
 calculate_happiness <- function(year) {
