@@ -12,7 +12,7 @@ hurricanes |>
 hurricanes |>
     dplyr::group_by(year) |> # nolint
     dplyr::slice_max(order_by = wind) |>
-    stats::filter(year >= 1980 & year <= 1990)
+    dplyr::filter(year >= 1980 & year <= 1990)
 
 # using the summarize function
 hurricanes |>

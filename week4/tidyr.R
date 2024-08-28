@@ -7,5 +7,5 @@ utils::View(students)
 students$GPA <- as.numeric(students$GPA)
 
 students |>
-    dplyr::group_by(major) |>
+    dplyr::group_by(major) |> # nolint
     dplyr::summarize(GPA = mean(GPA))

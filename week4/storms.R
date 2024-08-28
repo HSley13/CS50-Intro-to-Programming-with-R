@@ -10,11 +10,11 @@ utils::View(storms2)
 # almost like pipelines in mongoDB
 # |> or %>%
 hurricanes <- storms |>
-    dplyr::select(!c(lat, long, pressure, ends_with("diameter"))) |>
-    stats::filter(status == "hurricane") |>
+    dplyr::select(!c(lat, long, pressure, ends_with("diameter"))) |> # nolint
+    dplyr::filter(status == "hurricane") |>
     dplyr::arrange(desc(wind), name) |>
     dplyr::distinct(name, year, .keep_all = TRUE)
 
 hurricanes |>
-    dplyr::select(c(year, name, wind)) |>
+    dplyr::select(c(year, name, wind)) |> # nolint
     utils::write.csv("hurricanes.csv", row.names = FALSE)
