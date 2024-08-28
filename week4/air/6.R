@@ -9,3 +9,5 @@ air <- air |>
     arrange(desc(emissions))
 
 base::save(air, file = "6.RData")
+
+utils::View(air)

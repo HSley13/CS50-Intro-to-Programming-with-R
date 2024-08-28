@@ -9,3 +9,5 @@ air <- air |>
     arrange(source, pollutant)
 
 base::save(air, file = "7.RData")
+
+utils::View(air)

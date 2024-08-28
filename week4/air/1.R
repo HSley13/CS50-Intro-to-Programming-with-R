@@ -14,3 +14,5 @@ air <- air0 |>
     dplyr::select(c(state, county, pollutant, emissions, level_1, level_2, level_3, level_4)) # nolint
 
 base::save(air, file = "air.RData")
+
+utils::View(air)

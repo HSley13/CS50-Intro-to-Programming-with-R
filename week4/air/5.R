@@ -6,3 +6,5 @@ air <- air |>
     slice_head()
 
 base::save(air, file = "5.RData")
+
+utils::View(air)
