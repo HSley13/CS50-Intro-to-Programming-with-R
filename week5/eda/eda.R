@@ -3,7 +3,7 @@ utils::View(file)
 
 #------------------------------------------------- Data Description ---------------------------------------------------------- #nolint
 # table <- base::data.frame(
-#     row.names = c(Age, GPA, Python, SQL, Java),
+#     row.names = c(Age, GPA, Python, SQL, Java), #nolint
 
 # )
 
@@ -93,7 +93,6 @@ languages_plot <- ggplot2::ggplot(languages_long, aes(x = Language, y = Count, f
 ggplot2::ggsave("languages.png", plot = languages_plot, width = 3000, height = 1500, units = "px") # nolint
 
 #------------------------------------------------- Correlation of Gender and Skills ---------------------------------------------------------- #nolint
-
 GenderSkills <- data.frame( # nolint
     Gender = c("Male", "Male", "Male", "Female", "Female", "Female"), # nolint
     SkillLevel = c("Strong", "Average", "Weak", "Strong", "Average", "Weak"), # nolint
