@@ -1,0 +1,18 @@
+Package: myDashboardPackage
+Type: Package
+Title: Interactive Dashboard for Data Analysis
+Version: 0.1.0
+Author: Sley HORTES role = c("aut", "cre")
+Maintainer: sleyhortes13@gmail.com 
+Description: A Shiny-based interactive dashboard for data visualization and analysis.
+License: MIT
+Depends: R (>= 4.0.0), shiny, ggplot2, DT, plotly
+Encoding: UTF-8
+LazyData: true
+Imports:
+    shiny,
+    shinydashboard,
+    ggplot2,
+    DT,
+    plotly
+URL: 
