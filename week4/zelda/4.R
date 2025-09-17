@@ -6,6 +6,7 @@ zelda <- zelda |>
     dplyr::slice_min(year) |>
     dplyr::ungroup() |>
     dplyr::arrange(year, title, system)
+zelda
 
 base::save(zelda, file = "4.RData")
 

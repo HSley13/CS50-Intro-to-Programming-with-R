@@ -23,13 +23,18 @@ filter <- !(temps < 0 | temps > 60)
 temps <- temps[filter]
 
 no_outliers <- temps[!(temps < 0 | temps > 60)]
+#  [1] 15 20 33 43 38 26 31 35 14 24 39 28 18 12  5 35 26 44 21  7 14 14 31
+# [24] 35  5 16 19 27
 outliers <- temps[(temps < 0 | temps > 60)]
+# [1] -15 -20  65
 
 save(no_outliers, file = "no_outliers.RData")
 save(outliers, file = "outliers.RData")
 
 # returns true if there's any outlier
 any(temps < 0 | temps > 60)
+# [1] TRUE
 
 # returns true if all of them are outliers
 all(temps < 0 | temps > 60)
+# [1] FALSE

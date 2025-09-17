@@ -14,11 +14,11 @@ repeat{
 # iterates if the condition is meant
 j <- 1
 while (j <= 3) {
-    cat("quack!\n") # nolint
+    cat("quack!\n") 
     j <- j + 1
 }
 
 # iterates over the elements of a vector
 for (i in 1:10) {
-    cat("quack!\n") # nolint
+    cat("quack!\n")
 }

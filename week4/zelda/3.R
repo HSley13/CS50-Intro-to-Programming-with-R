@@ -5,6 +5,7 @@ zelda <- zelda |>
     dplyr::filter(year == min(year)) |>
     # dplyr::slice_min(year) we can also use the slice_min cause it takes the min of all the years #nolint
     dplyr::arrange(year, title, system)
+zelda
 
 base::save(zelda, file = "3.RData")
 

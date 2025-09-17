@@ -1,6 +1,6 @@
-Mario <- as.integer(readline("Enter Votes for Mario: ")) # nolint
-Peach <- as.integer(readline("Enter Votes for Peach: ")) # nolint
-Bowser <- as.integer(readline("Enter Votes for Bowser: ")) # nolint
+Mario <- as.integer(readline("Enter Mario's vote: "))
+Peach <- as.integer(readline("Enter Peach's vote: "))
+Bowser <- as.integer(readline("Enter Bowser's vote: "))
 
 total <- sum(Mario, Peach, Bowser)
 

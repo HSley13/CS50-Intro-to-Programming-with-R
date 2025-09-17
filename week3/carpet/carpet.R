@@ -4,22 +4,22 @@ calculate_growth_rate <- function(years, visitors) {
     first_year_visitors <- visitors[1]
 
     # The first year should be NA cause we don't its previous year data
-    growth_rate <- c(NA) # nolint
+    growth_rate <- c(NA) 
     for (i in 2:length(visitors)) {
-        rate <- (visitors[i] - first_year_visitors) / (years[i] - first_year) # nolint
-        growth_rate <- c(growth_rate, rate) # nolint
-    } # nolint
+        rate <- (visitors[i] - first_year_visitors) / (years[i] - first_year) 
+        growth_rate <- c(growth_rate, rate) 
+    } 
 
-    result <- data.frame(Year = years, Visitors = visitors, GrowthRate = growth_rate) # nolint
+    result <- data.frame(Year = years, Visitors = visitors, GrowthRate = growth_rate) 
 }
 
 predict_visitors <- function(years, visitors, year) {
     # TODO: Predict visitors in given year # nolint
-    growth_rate <- calculate_growth_rate(years, visitors) # nolint
+    growth_rate <- calculate_growth_rate(years, visitors) 
 
-    latest_year <- growth_rate[nrow(growth_rate), ] # nolint
+    latest_year <- growth_rate[nrow(growth_rate), ] 
 
-    predicted_visitors <- latest_year$Visitors + (latest_year$GrowthRate * (year - latest_year$Year)) # nolint
+    predicted_visitors <- latest_year$Visitors + (latest_year$GrowthRate * (year - latest_year$Year)) 
     predicted_visitors <- round(predicted_visitors, 2)
 }
 

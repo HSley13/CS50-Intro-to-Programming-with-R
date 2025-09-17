@@ -1,7 +1,7 @@
 utils::View(storms)
 
 # We can do it by passing normal arguments to the parameter lists
-storms1 <- dplyr::select(storms, !c(lat, long, pressure, ends_with("diameter")))
+storms1 <- dplyr::select(storms, !c(lat, long, pressure, dplyr::ends_with("diameter")))
 utils::View(storms1)
 storms2 <- dplyr::filter(storms2, status == "hurricane")
 utils::View(storms2)
@@ -10,11 +10,11 @@ utils::View(storms2)
 # almost like pipelines in mongoDB
 # |> or %>%
 hurricanes <- storms |>
-    dplyr::select(!c(lat, long, pressure, ends_with("diameter"))) |> # nolint
-    dplyr::filter(status == "hurricane") |>
-    dplyr::arrange(desc(wind), name) |>
-    dplyr::distinct(name, year, .keep_all = TRUE)
+  dplyr::select(!c(lat, long, pressure, dplyr::ends_with("diameter"))) |> # nolint
+  dplyr::filter(status == "hurricane") |>
+  dplyr::arrange(dplyr::desc(wind), name) |>
+  dplyr::distinct(name, year, .keep_all = TRUE)
 
 hurricanes |>
-    dplyr::select(c(year, name, wind)) |> # nolint
-    utils::write.csv("hurricanes.csv", row.names = FALSE)
+  dplyr::select(c(year, name, wind)) |> # nolint
+  utils::write.csv("hurricanes.csv", row.names = FALSE)
